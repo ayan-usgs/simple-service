@@ -9,7 +9,7 @@ file_env() {
 }
 
 if  ! [ -z $MOUNT_DIRECTORY ]; then
-	# if mount exists then export enviroment variables
+	# if mount exists then export environment variables
 	for FILE in $MOUNT_DIRECTORY/*.env; do
 		file_env $FILE
 	done
