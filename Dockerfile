@@ -17,7 +17,7 @@ RUN apk add --update \
 RUN update-ca-certificates
 COPY gunicorn_config.py /local/gunicorn_config.py
 COPY requirements.txt /requirements.txt
-COPY hello /hello
+COPY my_app /hello
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN export PIP_CERT="/etc/ssl/certs/ca-certificates.crt" && \
     pip3 install --upgrade pip && \
@@ -29,4 +29,4 @@ ENV ssl_certfile ${ssl_certfile}
 ENV log_level INFO
 EXPOSE ${bind_port}
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["/usr/bin/gunicorn", "--reload",  "hello.app", "--config", "file:/local/gunicorn_config.py"]
+CMD ["/usr/bin/gunicorn", "--reload",  "my_app.app", "--config", "file:/local/gunicorn_config.py"]
