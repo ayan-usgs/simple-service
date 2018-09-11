@@ -1,6 +1,6 @@
 # Simple Service
 
-This is a simplePython Falcon based web application for testing in a Docker container
+This is a simple Python Falcon web application for testing in a Docker container
 and loading environment variables from a mounted volume. This is intended test the
 efficacy of *.var files with AWS ECS which is missing support of env files as of
 September 2018.
