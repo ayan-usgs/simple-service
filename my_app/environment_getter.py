@@ -31,3 +31,11 @@ class EvenOdd:
                 result = False
         resp.body = json.dumps({'isEven': result})
         resp.status = falcon.HTTP_200
+
+
+class StringLength:
+
+    def on_get(self, req, resp):
+        some_str = req.params.get('string', '')
+        resp.body = json.dumps({'stringLength': len(some_str)})
+        resp.status = falcon.HTTP_200
