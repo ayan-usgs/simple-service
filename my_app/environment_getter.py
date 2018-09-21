@@ -15,3 +15,19 @@ class EnvironmentGetter:
             env_var_result = os.getenv(env_var)
             resp.body = json.dumps({env_var: env_var_result})
         resp.status = falcon.HTTP_200
+
+
+class EvenOdd:
+
+    def on_get(self, req, resp):
+        number_val = req.params.get('value')
+        if number_val is None:
+            result = None
+        else:
+            modulo_val = float(number_val) % 2
+            if modulo_val == 0:
+                result = True
+            else:
+                result = False
+        resp.body = json.dumps({'isEven': result})
+        resp.status = falcon.HTTP_200
