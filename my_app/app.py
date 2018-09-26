@@ -1,6 +1,6 @@
 import falcon
 
-from .environment_getter import EnvironmentGetter, EvenOdd, StringLength
+from .services import EnvironmentGetter, EvenOdd, StringLength
 
 
 api = application = falcon.API()
