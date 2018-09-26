@@ -15,4 +15,6 @@ if  ! [ -z ${MOUNT_DIRECTORY} ]; then
 	done
 fi
 
+/usr/bin/gunicorn --chdir / --reload application.app --config file:/local/gunicorn_config.py
+
 exec "$@"
