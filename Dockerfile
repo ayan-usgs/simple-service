@@ -28,7 +28,4 @@ ENV ssl_keyfile ${ssl_keyfile}
 ENV ssl_certfile ${ssl_certfile}
 ENV log_level INFO
 EXPOSE ${bind_port}
-# ENTRYPOINT ["docker-entrypoint.sh"]
-# CMD ["/bin/bash", "/usr/local/bin/docker-entrypoint.sh", "&&", "/usr/bin/gunicorn", "--chdir", "/", "--reload",  "application.app", "--config", "file:/local/gunicorn_config.py"]
-# CMD docker-entrypoint.sh && /usr/bin/gunicorn --reload application.app --config file:/local/gunicorn_config.py
 CMD ["docker-entrypoint.sh"]
